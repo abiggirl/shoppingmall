@@ -26,6 +26,5 @@ export default {
     }
     .center {
         flex: 1;
-        /* background-color: rgb(88, 54, 141); */
     }
 </style>

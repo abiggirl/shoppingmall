@@ -36,6 +36,12 @@ const routes = [{
         name: 'Profile',
         component: () =>
             import ('views/profile/Profile.vue')
+    },
+    {
+        path: '/detail/:iid',
+        name: 'Detail',
+        component: () =>
+            import ('views/detail/Detail.vue')
     }
 
 ]
