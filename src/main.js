@@ -24,10 +24,18 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-// import store from './store'
+import store from './store'
+import lazyPlugin from 'vue3-lazy'
 const app = createApp(App)
 
 import bus from './bus'
+import FastClick from "fastclick";
 
-app.use(router).mount('#app')
+app.use(router).use(store).use(lazyPlugin, {
+    // loading: require('@/assets/images/default.png'), // 图片加载时默认图片
+    // error: require('@/assets/images/error.png') // 图片加载失败时默认图片
+}).mount('#app')
 app.config.globalProperties.$bus = bus
+
+
+FastClick.attach(document.body)
